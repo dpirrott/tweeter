@@ -52,3 +52,11 @@ label[for=tweet-text] {
   color: #fff;
   border-radius: 7px;
 }
+
+.charOverFlowWarning {
+  color: yellow;
+}
+
+.charOverflow {
+  color: red;
+}
