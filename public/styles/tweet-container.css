@@ -21,3 +21,11 @@ article footer {
   justify-content: space-between;
 }
 
+.tweet-icons {
+  color: #4056A1;
+}
+
+.tweet-icons:hover {
+  color: rgb(211, 179, 0);
+}
+
