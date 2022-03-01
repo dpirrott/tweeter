@@ -1,15 +1,30 @@
 article {
   border: 3px solid black;
   border-radius: 15px;
-  padding-left: 1em;
-  padding-bottom: 1em;
-  padding-right: 1em;
+  padding: 1em;
   margin-bottom: 1em;
+}
+
+article:hover {
+  box-shadow: 10px 10px rgb(166, 175, 175);
 }
 
 article header {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
+}
+
+article header figure {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+article header figure img {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
 }
 
 article p {
