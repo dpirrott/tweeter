@@ -1,0 +1,19 @@
+header {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/tree-bark.png");
+  background-color: #178c2e;
+}
+
+#profileName {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+#profileName h2 {
+  margin-top: 0;
+}
