@@ -26,6 +26,9 @@
     
     <!-- new-tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    
+    <!-- Tweet-container CSS -->
+    <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -53,7 +56,7 @@
       </span>
     </nav>
 
-    <header>
+    <header id="mainPageHeader">
       <div id="profilePicContainer">
           <img id="profileImg" src="/images/profile-hex.png"> 
       </div>
@@ -64,6 +67,8 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
+      <!-- New tweet section -->
       <section class="new-tweet">
         <h2 id="composeTweet">Compose Tweet</h2>
         <form method="POST" action="/tweets">
@@ -75,6 +80,20 @@
           </div>
         </form>
       </section>
+      
+      <!-- Tweet articles -->
+      <article>
+        <header>
+          <h3 class="userFullName">Dylan Pirrotta</h3>
+          <h3 class="userName">@dpirrotta</h3> 
+        </header>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quibusdam laudantium modi assumenda omnis aut dolore, commodi officia quidem.</p>
+        <footer>
+          <span class="timeSincePost">10 days ago</span>
+          <span class="optionIcons">Flag, loop, heart</span>
+        </footer>
+      </article>
+
     </main>
   </body>
 </html>

@@ -4,8 +4,6 @@
   padding-bottom: 40px;
   padding-right: 40px;
   margin: 25px auto;
-  border: 3px solid black;
-  border-radius: 20px;
 }
 
 form {
@@ -15,6 +13,7 @@ form {
 
 #composeTweet {
   text-decoration: underline;
+  text-align: center;
 }
 
 .new-tweet form div {
@@ -32,6 +31,7 @@ form {
   height: 60px;
   color: black;
   font-weight: 600;
+  margin-top: 5px;
 }
 
 label[for=tweet-text] {

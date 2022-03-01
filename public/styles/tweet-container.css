@@ -1,0 +1,23 @@
+article {
+  border: 3px solid black;
+  border-radius: 15px;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  padding-right: 1em;
+  margin-bottom: 1em;
+}
+
+article header {
+  display: flex;
+  justify-content: space-between;
+}
+
+article p {
+  border-bottom: 3px solid black;
+}
+
+article footer {
+  display: flex;;
+  justify-content: space-between;
+}
+
