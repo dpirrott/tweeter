@@ -1,6 +1,11 @@
 .new-tweet {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
+  padding-left: 40px;
+  padding-bottom: 40px;
+  padding-right: 40px;
+  margin: 25px auto;
+  border: 3px solid black;
+  border-radius: 20px;
 }
 
 form {
@@ -16,6 +21,7 @@ form {
 
 #tweet-text {
   background-color: inherit;
+  font-family: inherit;
   border: none;
   border-bottom: 3px solid black;
   margin-bottom: 15px;
@@ -23,7 +29,6 @@ form {
 }
 
 #tweet-text::placeholder {
-  font-family: inherit;
   font-weight: 600;
 }
 
