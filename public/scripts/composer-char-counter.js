@@ -1,5 +1,4 @@
 $(() => {
-  
   $('#tweet-text').on('input', function() {
     const remainingLength = 140 - this.value.length;
     const counter = $(this).next().find('output');
@@ -12,5 +11,4 @@ $(() => {
       counter.addClass('char-count-overflow-warning');
     }
   });
-
 });
