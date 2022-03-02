@@ -58,6 +58,14 @@ label[for=tweet-text] {
   border-radius: 7px;
 }
 
+#tweetBtn:hover {
+  background-color: #5977da;
+}
+
+#tweetBtn:active {
+  box-shadow: 0 0 3px 3px rgb(89, 228, 3);
+}
+
 .char-count {
   color: black;
 }
