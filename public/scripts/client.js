@@ -30,7 +30,7 @@ $(() => {
         </header>
         <p>${tweetData.content.text}</p>
         <footer>
-          <span>${tweetData.created_at}</span>
+          <span>${timeago.format(tweetData.created_at)}</span>
           <div>
             <i class="fa-solid fa-flag"></i> <i class="fa-solid fa-retweet"></i> <i class="fa-solid fa-heart"></i>
           </div>
