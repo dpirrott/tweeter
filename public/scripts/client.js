@@ -59,6 +59,19 @@ $(() => {
     `)
   };
 
+  const loadTweets = function() {
+    $.ajax ({
+      url: "http://localhost:8080/tweets",
+      method: 'GET',
+      dataType: "json",
+      success: function(data) {
+        renderTweets(data);
+      }
+    });
+  };
+
+  loadTweets();
+
   $('#tweet-form').submit(function(e) {
     e.preventDefault();
     console.log(e.target[0].value)
