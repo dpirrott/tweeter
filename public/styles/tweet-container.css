@@ -38,11 +38,11 @@ article footer {
   justify-content: space-between;
 }
 
-.tweet-icons {
+span > i {
   color: #4056A1;
 }
 
-.tweet-icons:hover {
+span > i:hover {
   color: rgb(211, 179, 0);
 }
 

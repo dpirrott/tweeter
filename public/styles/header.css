@@ -1,4 +1,4 @@
-#mainPageHeader {
+body > header {
   height: 400px;
   width: 100%;
   display: flex;
@@ -23,7 +23,7 @@
   flex-grow: 1;
 }
 
-#profileImg {
+#profilePicContainer > img {
   size: 100%;
   flex-shrink: 1;
 }

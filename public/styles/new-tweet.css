@@ -8,11 +8,11 @@ form {
   flex-direction: column;
 }
 
-.new-tweet h2 {
+.new-tweet > h2 {
   text-decoration: underline;
 }
 
-.new-tweet form div {
+.new-tweet > form div {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
