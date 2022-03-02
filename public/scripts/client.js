@@ -77,6 +77,8 @@ $(() => {
         }
       )
       .then(() => {
+        // Clear the form input
+        $(this)[0][0].value = "";
         loadTweets();
       });
     }
