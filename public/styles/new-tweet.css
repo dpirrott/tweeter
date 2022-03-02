@@ -10,7 +10,6 @@ form {
 
 .new-tweet h2 {
   text-decoration: underline;
-  text-align: center;
 }
 
 .new-tweet form div {
@@ -50,4 +49,18 @@ label[for=tweet-text] {
   background-color: #4056A1;
   color: #fff;
   border-radius: 7px;
+}
+
+.char-count {
+  color: black;
+}
+
+.char-count-overflowed {
+  color: white;
+  background-color: red;
+}
+
+.char-count-overflow-warning {
+  color: black;
+  background-color: yellow;
 }

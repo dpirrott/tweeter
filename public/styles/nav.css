@@ -11,16 +11,12 @@ nav {
   top: 0;
 }
 
-#tweeterHeader {
+nav > span {
   font-family: 'Bungee', cursive;
 }
 
-#writeNewTweetNav {
+nav > div {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.bold {
-  font-weight: 600;
 }
