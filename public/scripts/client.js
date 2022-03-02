@@ -7,10 +7,12 @@
 $(() => {
 
   const renderTweets = tweets => {
+    $('#tweets-container').empty();
+    tweets.sort((a, b) => b.created_at - a.created_at);
     for (const tweet of tweets) {
       $('#tweets-container').append(createTweetElement(tweet));
     }
-  }
+  };
 
   const createTweetElement = tweetData => (`
       <article>
@@ -58,6 +60,14 @@ $(() => {
     } else {
       // Clear error msg
       formErrorHandler("");
+      if (len > 70) {
+      console.log("Detetectedd over 75!!!!!!");
+      console.log($(this)[0][0].value);
+      const firstLine = $(this)[0][0].value.slice(0, 71);
+      const secondLine = $(this)[0][0].value.slice(71, len);
+      $(this)[0][0].value = firstLine + '\n' + secondLine;
+      console.log($(this)[0][0].value);
+      }
       const formattedData = $(this).serialize();
       $.ajax (
         "http://localhost:8080/tweets",
@@ -65,7 +75,10 @@ $(() => {
           method: 'POST',
           data: formattedData
         }
-      );
+      )
+      .then(() => {
+        loadTweets();
+      });
     }
   });
 
