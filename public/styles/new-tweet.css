@@ -8,7 +8,7 @@ form {
   flex-direction: column;
 }
 
-#composeTweet {
+.new-tweet h2 {
   text-decoration: underline;
   text-align: center;
 }
@@ -48,12 +48,4 @@ label[for=tweet-text] {
   background-color: #4056A1;
   color: #fff;
   border-radius: 7px;
-}
-
-.charOverFlowWarning {
-  color: yellow;
-}
-
-.charOverflow {
-  color: red;
 }
