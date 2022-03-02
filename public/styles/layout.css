@@ -30,3 +30,7 @@ main {
   margin: 0 auto;
   background-color: inherit;
 }
+
+body > footer {
+  text-align: center;
+}
