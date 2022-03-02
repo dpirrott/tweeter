@@ -59,6 +59,23 @@ $(() => {
     `)
   };
 
+  $('#tweet-form').submit(function(e) {
+    e.preventDefault();
+    console.log(e.target[0].value)
+    const formattedData = $(this).serialize();
+    console.log(formattedData);
+    $.ajax (
+      "http://localhost:8080/tweets",
+      {
+        method: 'POST',
+        data: formattedData
+      }
+    )
+    .then((res) => {
+      console.log(res);
+    })
+  });
+
   renderTweets(data);
 });
 
