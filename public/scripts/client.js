@@ -6,14 +6,13 @@
 
 $(() => {
 
-  const renderTweets = function(tweets) {
+  const renderTweets = tweets => {
     for (const tweet of tweets) {
       $('#tweets-container').append(createTweetElement(tweet));
     }
   }
 
-  const createTweetElement = function(tweetData) {
-    return (`
+  const createTweetElement = tweetData => (`
       <article>
         <header>
           <figure>
@@ -30,38 +29,46 @@ $(() => {
           </div>
         </footer>
       </article>
-    `)
-  };
+    `);
 
-  const loadTweets = function() {
-    $.ajax ({
+  const loadTweets = () => {
+    $.ajax({
       url: "http://localhost:8080/tweets",
       method: 'GET',
       dataType: "json",
-      success: function(data) {
+      success: function (data) {
         renderTweets(data);
       }
     });
   };
 
-  loadTweets();
+  // Chrome was complaining about using alert (violation error), so I created red error message
+  const formErrorHandler = errorMsg => {
+    const displayError = $('#tweet-form').find('p');
+    displayError.text(errorMsg);
+  }; 
 
   $('#tweet-form').submit(function(e) {
     e.preventDefault();
-    console.log(e.target[0].value)
-    const formattedData = $(this).serialize();
-    console.log(formattedData);
-    $.ajax (
-      "http://localhost:8080/tweets",
-      {
-        method: 'POST',
-        data: formattedData
-      }
-    )
-    .then((res) => {
-      console.log(res);
-    })
+    const len = e.target[0].value.length;
+    if (len > 140) {
+      formErrorHandler("Message exceeded maximum number of characters! (140 chars)");
+    } else if (len === 0) {
+      formErrorHandler("Cannot submit empty tweet!");
+    } else {
+      // Clear error msg
+      formErrorHandler("");
+      const formattedData = $(this).serialize();
+      $.ajax (
+        "http://localhost:8080/tweets",
+        {
+          method: 'POST',
+          data: formattedData
+        }
+      );
+    }
   });
 
+  loadTweets();
 });
 

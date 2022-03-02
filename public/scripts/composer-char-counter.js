@@ -1,7 +1,7 @@
 $(() => {
   $('#tweet-text').on('input', function() {
     const remainingLength = 140 - this.value.length;
-    const counter = $(this).next().find('output');
+    const counter = $(this).siblings().find('output');
     counter.text(remainingLength);
     counter.removeClass();
     counter.addClass('char-count');
