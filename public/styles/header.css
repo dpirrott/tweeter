@@ -7,17 +7,20 @@
   align-items: center;
   background-image: url("../images/tree-bark.png");
   background-color: #178c2e;
+  margin-top: 120px;
 }
 
 #profileName {
   color: #FFFFFF;
   font-weight: 600;
+  align-items: center;
 }
 
 #profilePicContainer {
   height: 60%;
   display: flex;
   justify-content: center;
+  flex-grow: 1;
 }
 
 #profileImg {
