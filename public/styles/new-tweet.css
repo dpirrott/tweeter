@@ -33,6 +33,8 @@ form {
 
 label[for=tweet-text] {
   font-weight: 900;
+  font-style: italic;
+  font-size: 1.25em;
 }
 
 #tweet-text::placeholder {

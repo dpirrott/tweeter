@@ -3,6 +3,7 @@ article {
   border-radius: 15px;
   padding: 1em;
   margin-bottom: 1em;
+  background-color: rgba(89, 185, 89, 0.472);
 }
 
 article:hover {
@@ -28,6 +29,7 @@ article header figure img {
 }
 
 article p {
+  font-weight: 600;
   border-bottom: 3px solid black;
 }
 
