@@ -42,3 +42,22 @@ nav > button {
     transform: translateY(0);
   }
 }
+
+.scroll-up-show {
+  width: 80px;
+  height: 80px;
+  background-color: rgb(255, 147, 24);
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.scroll-up-hide {
+  display: none;
+}
