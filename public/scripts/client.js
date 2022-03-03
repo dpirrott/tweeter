@@ -43,14 +43,14 @@ $(() => {
     $.ajax({
       url: "http://localhost:8080/tweets",
       method: 'GET',
-      dataType: "json",
-      success: function (data) {
+      dataType: "json"
+    })
+      .then((data) => {
         renderTweets(data);
-      },
-      error: function() {
-
-      }
-    });
+      })
+      .catch((err) => {
+        console.log("Error: ", err);
+      });
   };
 
   // Chrome was complaining about using alert (violation error), so I created red error message
@@ -76,22 +76,17 @@ $(() => {
     } else {
       // Clear error msg since sucess
       formErrorHandler("");
+      $(this).find('output').text('140');
       const formattedData = $(this).serialize();
-      $.ajax (
-        "http://localhost:8080/tweets",
-        {
-          method: 'POST',
-          data: formattedData
-        }
-      )
-      .then(() => {
-        // Clear the form input
-        $(this)[0][0].value = "";
-        loadTweets();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      $.ajax ("http://localhost:8080/tweets", {method: 'POST', data: formattedData})
+        .then(() => {
+          // Clear the form input
+          $(this)[0][0].value = "";
+          loadTweets();
+        })
+        .catch((err) => {
+          console.log("Error: ", err);
+        });
     }
   });
 
