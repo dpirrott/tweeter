@@ -13,10 +13,37 @@ nav {
 
 nav > span {
   font-family: 'Bungee', cursive;
+  font-size: 2em;
 }
 
 nav > div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1.25em;
+}
+
+/* nav > div > span {
+  font-size: 1.25em;
+}
+
+.fa-angles-down {
+  font-size: 1.25em;
+} */
+
+.fa-angles-down:hover {
+  animation-name: swayUpDown;
+  animation-iteration-count: infinite;
+  animation-duration: 800ms;
+  color: rgb(157, 255, 0);
+}
+
+@keyframes swayUpDown {
+  0% {
+    transform: translateY(0);
+  } 50% {
+    transform: translateY(5px);
+  }100% {
+    transform: translateY(0);
+  }
 }
