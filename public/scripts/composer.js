@@ -4,8 +4,8 @@ $(() => {
     const scrollPosition = $(this).scrollTop();
     const scrollUpBtn = $('#scrollUpBtn');
     const nav = $('nav');
+    const navBtn = nav.children('button');
     const header = $('body').children('header');
-
     const tweetContainer = $('#tweets-container');
 
     // Only hide navHeader when there's enough tweet content to fill the screen
@@ -16,21 +16,20 @@ $(() => {
           scrollUpBtn.removeClass();
           scrollUpBtn.addClass("scroll-up-show");
         }
-  
         // Hide the nav, somehow make tweeter heading stay
-        if (!header.is(":hidden")) {
+        if (!header.is(":hidden") || !navBtn.is(':hidden')) {
           //nav.hide("slide");
           header.hide("slide");
           nav.addClass("transparentNav");
+          navBtn.addClass('scroll-up-hide');
         }
         
       } else {
         scrollUpBtn.removeClass();
         scrollUpBtn.addClass("scroll-up-hide");
-  
-        //nav.slideDown(600)
-        header.slideDown(600)
-        nav.removeClass()
+        header.slideDown(600);
+        nav.removeClass();
+        navBtn.removeClass();
       }
     }
     

@@ -48,8 +48,8 @@ nav > button {
 }
 
 .scroll-up-show {
-  width: 70px;
-  height: 70px;
+  width: 75px;
+  height: 75px;
   background-color: rgb(255, 0, 0);
   color: white;
   position: fixed;
@@ -69,7 +69,7 @@ nav > button {
 #scrollUpBtn:hover {
   border: 5px solid black;
   animation-name: pulse;
-  animation-duration: 600ms;  
+  animation-duration: 700ms;  
   animation-iteration-count: infinite;
 }
 
@@ -77,8 +77,8 @@ nav > button {
   0%{
     box-shadow: 0 0 3px 5px black;
     font-size: 32px;
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
     bottom: 20px;
     right: 20px;
   } 50% {
@@ -86,13 +86,13 @@ nav > button {
     font-size: 40px;
     width: 80px;
     height: 80px;
-    bottom: 15px;
-    right: 15px;
+    bottom: 17.5px;
+    right: 17.5px;
   } 100% {
     box-shadow: 0 0 3px 5px black;
     font-size: 32px;
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
     bottom: 20px;
     right: 20px;
   }
