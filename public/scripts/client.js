@@ -77,6 +77,7 @@ $(() => {
       // Clear error msg since sucess
       formErrorHandler("");
       $(this).find('output').text('140');
+      $(this).find('output').addClass('char-count')
       const formattedData = $(this).serialize();
       $.ajax ("http://localhost:8080/tweets", {method: 'POST', data: formattedData})
         .then(() => {
