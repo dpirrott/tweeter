@@ -3,12 +3,14 @@ article {
   border-radius: 15px;
   padding: 1em;
   margin-top: 1em;
-  background-color: rgba(89, 185, 89, 0.472);
+  background-color: rgba(175, 182, 175, 0.92);
+  color: black;
 }
 
 article:hover {
-  box-shadow: 10px 10px rgb(166, 175, 175);
-  background-color: rgba(89, 185, 89, 0.787);
+  box-shadow: 10px 10px rgb(132, 136, 136);
+  background-color: rgba(70, 156, 255, 0.787);
+  border: 2px solid white;
 }
 
 article header {

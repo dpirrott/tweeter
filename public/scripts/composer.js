@@ -5,26 +5,35 @@ $(() => {
     const scrollUpBtn = $('#scrollUpBtn');
     const nav = $('nav');
     const header = $('body').children('header');
-    if (scrollPosition !== 0) {
-      // Show scroll button if still hidden
-      if (scrollUpBtn.hasClass("scroll-up-hide")) {
+
+    const tweetContainer = $('#tweets-container');
+
+    // Only hide navHeader when there's enough tweet content to fill the screen
+    if (tweetContainer.height() > $(window).height()) {
+      if (scrollPosition !== 0) {
+        // Show scroll button if still hidden
+        if (scrollUpBtn.hasClass("scroll-up-hide")) {
+          scrollUpBtn.removeClass();
+          scrollUpBtn.addClass("scroll-up-show");
+        }
+  
+        // Hide the nav, somehow make tweeter heading stay
+        if (!header.is(":hidden")) {
+          //nav.hide("slide");
+          header.hide("slide");
+          nav.addClass("transparentNav");
+        }
+        
+      } else {
         scrollUpBtn.removeClass();
-        scrollUpBtn.addClass("scroll-up-show");
+        scrollUpBtn.addClass("scroll-up-hide");
+  
+        //nav.slideDown(600)
+        header.slideDown(600)
+        nav.removeClass()
       }
-
-      // Hide the nav, somehow make tweeter heading stay
-      if (!nav.is(":hidden") || !header.is(":hidden")) {
-        nav.hide("slide");
-        header.hide("slide");
-      }
-      
-    } else {
-      scrollUpBtn.removeClass();
-      scrollUpBtn.addClass("scroll-up-hide");
-
-      nav.slideDown()
-      header.slideDown()
     }
+    
   });
 
   const textArea = $('#tweet-text');
@@ -37,5 +46,9 @@ $(() => {
     textArea.focus();
   });
 
+  // ONLY HIDE NAVHEADER WHEN TWEETS CONTAINER IS > 
+
+  // ADD HOVER EVENT FOR SCROLL BUTTON, MAKE SOMETHING HAPPEN
+  // THIS IS HERE SO YOU DON'T FORGET
 
 });
