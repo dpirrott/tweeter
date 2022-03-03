@@ -57,10 +57,10 @@ $(() => {
   const formErrorHandler = errorMsg => {
     const displayError = $('#tweet-form').find('p');
     if(displayError.is(":hidden") && errorMsg !== "") {
-      displayError.text(errorMsg);
+      displayError.html(`<i class="fa-solid fa-triangle-exclamation"></i> ${errorMsg} <i class="fa-solid fa-triangle-exclamation"></i>`);
       displayError.slideDown("slow");
     }else if (errorMsg !== ""){
-      displayError.text(errorMsg);
+      displayError.html(`<i class="fa-solid fa-triangle-exclamation"></i> ${errorMsg} <i class="fa-solid fa-triangle-exclamation"></i>`);
     } else {
       displayError.hide('slide');
     }
@@ -68,16 +68,13 @@ $(() => {
 
   $('#tweet-form').submit(function(e) {
     e.preventDefault();
-
-    console.log(e)
-
     const len = this.text.value.length;
     if (len > 140) {
       formErrorHandler("Too many characters! (140 max)");
     } else if (len === 0) {
       formErrorHandler("Cannot submit blank input field");
     } else {
-      // Clear error msg
+      // Clear error msg since sucess
       formErrorHandler("");
       const formattedData = $(this).serialize();
       $.ajax (
@@ -91,6 +88,9 @@ $(() => {
         // Clear the form input
         $(this)[0][0].value = "";
         loadTweets();
+      })
+      .catch((err) => {
+        console.log(err);
       });
     }
   });
