@@ -6,6 +6,12 @@
 
 $(() => {
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const renderTweets = tweets => {
     $('#tweets-container').empty();
     tweets.sort((a, b) => b.created_at - a.created_at);
@@ -23,7 +29,7 @@ $(() => {
           </figure>
           <h3>${tweetData.user.handle}</h3> 
         </header>
-        <p>${tweetData.content.text}</p>
+        <p>${escape(tweetData.content.text)}</p>
         <footer>
           <span>${timeago.format(tweetData.created_at)}</span>
           <div>
@@ -40,6 +46,9 @@ $(() => {
       dataType: "json",
       success: function (data) {
         renderTweets(data);
+      },
+      error: function() {
+
       }
     });
   };
@@ -47,27 +56,29 @@ $(() => {
   // Chrome was complaining about using alert (violation error), so I created red error message
   const formErrorHandler = errorMsg => {
     const displayError = $('#tweet-form').find('p');
-    displayError.text(errorMsg);
+    if(displayError.is(":hidden") && errorMsg !== "") {
+      displayError.text(errorMsg);
+      displayError.slideDown("slow");
+    }else if (errorMsg !== ""){
+      displayError.text(errorMsg);
+    } else {
+      displayError.hide('slide');
+    }
   }; 
 
   $('#tweet-form').submit(function(e) {
     e.preventDefault();
-    const len = e.target[0].value.length;
+
+    console.log(e)
+
+    const len = this.text.value.length;
     if (len > 140) {
-      formErrorHandler("Message exceeded maximum number of characters! (140 chars)");
+      formErrorHandler("Too many characters! (140 max)");
     } else if (len === 0) {
-      formErrorHandler("Cannot submit empty tweet!");
+      formErrorHandler("Cannot submit blank input field");
     } else {
       // Clear error msg
       formErrorHandler("");
-      if (len > 70) {
-      console.log("Detetectedd over 75!!!!!!");
-      console.log($(this)[0][0].value);
-      const firstLine = $(this)[0][0].value.slice(0, 71);
-      const secondLine = $(this)[0][0].value.slice(71, len);
-      $(this)[0][0].value = firstLine + '\n' + secondLine;
-      console.log($(this)[0][0].value);
-      }
       const formattedData = $(this).serialize();
       $.ajax (
         "http://localhost:8080/tweets",
