@@ -9,8 +9,8 @@ article {
 
 article:hover {
   box-shadow: 10px 10px rgb(132, 136, 136);
-  background-color: rgba(211, 255, 234, 0.787);
-  border: 3px solid white;
+  background-color: rgba(228, 255, 242, 0.787);
+  border: 3px solid green;
 }
 
 article header {

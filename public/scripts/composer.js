@@ -19,7 +19,7 @@ $(() => {
         // Hide the nav, somehow make tweeter heading stay
         if (!header.is(":hidden") || !navBtn.is(':hidden')) {
           //nav.hide("slide");
-          header.hide("slide");
+          header.slideUp(600);
           nav.addClass("transparentNav");
           navBtn.addClass('scroll-up-hide');
         }
@@ -40,14 +40,22 @@ $(() => {
   
   $('#scrollUpBtn').on('click', () => {
     // Scroll to top
-    form.slideDown("slow");
-    window.scrollTo(0, 0);
-    textArea.focus();
+    let currentPosition = $(window).scrollTop();
+    const start = currentPosition;
+    let timer = 0;
+    for (let i = start; i >= 0; i -= 3) {
+      if (i < 3) {
+        i = 0;
+      }
+      setTimeout(() => {
+        window.scrollTo(0, i);
+      }, timer)
+      timer += 1;
+    }
+    setTimeout(() => {
+      form.slideDown("slow");
+      textArea.focus();
+    }, timer);
   });
-
-  // ONLY HIDE NAVHEADER WHEN TWEETS CONTAINER IS > 
-
-  // ADD HOVER EVENT FOR SCROLL BUTTON, MAKE SOMETHING HAPPEN
-  // THIS IS HERE SO YOU DON'T FORGET
 
 });
