@@ -27,5 +27,15 @@ $(() => {
     }
   });
 
+  const textArea = $('#tweet-text');
+  const form = $('.new-tweet')
+  
+  $('#scrollUpBtn').on('click', () => {
+    // Scroll to top
+    form.slideDown("slow");
+    window.scrollTo(0, 0);
+    textArea.focus();
+  });
+
 
 });

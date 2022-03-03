@@ -8,6 +8,7 @@ article {
 
 article:hover {
   box-shadow: 10px 10px rgb(166, 175, 175);
+  background-color: rgba(89, 185, 89, 0.787);
 }
 
 article header {
