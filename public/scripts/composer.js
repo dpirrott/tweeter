@@ -1,17 +1,19 @@
 $(() => {
 
   $(window).scroll(() => {
-    const scrollPosition = $(this).scrollTop()
+    const scrollPosition = $(this).scrollTop();
+    const scrollUpBtn = $('#scrollUpBtn');
     if (scrollPosition !== 0) {
-      console.log("I'm not at top!")
-
-      // Add new button and collapse nav
-
-      // Add new button
+      // Show scroll button if still hidden
+      if (scrollUpBtn.hasClass("scroll-up-hide")) {
+        scrollUpBtn.removeClass();
+        scrollUpBtn.addClass("scroll-up-show");
+      }
       
 
     } else {
-      console.log("I'm at top!")
+      scrollUpBtn.removeClass();
+      scrollUpBtn.addClass("scroll-up-hide");
     }
   });
 
