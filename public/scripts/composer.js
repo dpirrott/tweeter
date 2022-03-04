@@ -59,33 +59,43 @@ $(() => {
       }
     }
     
-    
-    
   });
 
-  const textArea = $('#tweet-text');
-  const form = $('.new-tweet')
+  
   
   $('#scrollUpBtn').on('click', () => {
-    // Scroll to top
+    
+    const textArea = $('#tweet-text');
+    const form = $('.new-tweet');
+    const header = $('body').children('header');
+
+
     let currentPosition = $(window).scrollTop();
-    const start = currentPosition;
     let timer = 0;
-    for (let i = start; i >= 0; i -= 3) {
+    let i = currentPosition;
+    let j = i;
+    while (i >= 0){
       if (i < 3) {
         i = 0;
       }
       setTimeout(() => {
-        window.scrollTo(0, i);
+        if (j < 3) {
+          j = 0;
+        }
+        window.scrollTo(0, j);
+        j -= 3;
       }, timer)
-      timer += 1;
+      timer++;
+      i -= 3;
     }
     setTimeout(() => {
-      form.slideDown("slow");
-      setTimeout(() => {
+      form.slideDown("slow", () => {
         textArea.focus();
         console.log($('#scrollUpBtn'))
         $('#scrollUpBtn').css('animation-name', 'none');
+      });
+      setTimeout(() => {
+        
       }, 400);      
     }, timer + 20);
 
