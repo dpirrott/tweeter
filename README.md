@@ -1,6 +1,14 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone built with HTML, CSS, JS, jQuery and AJAX. Users are able to post tweets to the tweet feed through a 140 character restricted form input. Fake user profile data will populate the tweet feed as tweets are submitted
+Tweeter is a simple, single-page Twitter clone built with HTML, CSS, JS, jQuery and AJAX. Users are able to post tweets to the tweet feed through a 140 character restricted form input. Fake user profile data will populate the tweet feed as tweets are submitted.
+
+## Demo
+
+| !["Posting a tweet demo"](https://github.com/dpirrott/tweeter/blob/master/docs/enterTweet.gif) |
+
+| :--: |
+
+| Posting a tweet |
 
 ## Getting Started
 
