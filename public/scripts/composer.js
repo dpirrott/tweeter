@@ -16,6 +16,7 @@ $(() => {
           if (scrollUpBtn.hasClass("scroll-up-hide")) {
             scrollUpBtn.removeClass();
             scrollUpBtn.addClass("scroll-up-show");
+            scrollUpBtn.css('animation-name', 'none');
           }
           // Hide the nav, somehow make tweeter heading stay
           if (!header.is(":hidden") || !navBtn.is(':hidden')) {
@@ -41,6 +42,7 @@ $(() => {
             console.log("Check misfires")
             scrollUpBtn.removeClass();
             scrollUpBtn.addClass("scroll-up-show");
+            scrollUpBtn.css('animation-name', 'pulse');
           }
           // Hide the nav
           if (!header.is(":hidden") || !navBtn.is(':hidden')) {
@@ -82,7 +84,8 @@ $(() => {
       form.slideDown("slow");
       setTimeout(() => {
         textArea.focus();
-        $(this).removeClass();
+        console.log($('#scrollUpBtn'))
+        $('#scrollUpBtn').css('animation-name', 'none');
       }, 400);      
     }, timer + 20);
 
