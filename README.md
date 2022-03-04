@@ -7,15 +7,15 @@ Tweeter is a simple, single-page Twitter clone built with HTML, CSS, JS, jQuery 
 
 | !["Posting a tweet demo"](https://github.com/dpirrott/tweeter/blob/master/docs/enterTweet.gif) |
 | :--: |
-| **Posting a tweet** |
+| **Posting a tweet (Desktop version)** |
 
 | !["Quick scroll-up demo"](https://github.com/dpirrott/tweeter/blob/master/docs/quickScrollGif.gif) |
 | :--: |
-| **Quick scroll-up** |
+| **Quick scroll-up (Desktop version)** |
 
 | !["Mobile demo"](https://github.com/dpirrott/tweeter/blob/master/docs/mobileDemoGif.gif) |
 | :--: |
-| **Mobile version** |
+| **Posting a tweet & quick scroll up (Mobile version)** |
 
 ## Getting Started
 
