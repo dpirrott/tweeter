@@ -12,6 +12,11 @@ Tweeter is a simple, single-page Twitter clone built with HTML, CSS, JS, jQuery 
 | !["Quick scroll-up demo"](https://github.com/dpirrott/tweeter/blob/master/docs/quickScrollGif.gif) |
 | :--: |
 | **Quick scroll-up** |
+
+| !["Mobile demo"](https://github.com/dpirrott/tweeter/blob/master/docs/mobileDemoGif.gif) |
+| :--: |
+| **Mobile version** |
+
 ## Getting Started
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
