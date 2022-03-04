@@ -18,7 +18,7 @@ $(() => {
             scrollUpBtn.addClass("scroll-up-show");
             scrollUpBtn.css('animation-name', 'none');
           }
-          // Hide the nav, somehow make tweeter heading stay
+          // Hide the nav
           if (!header.is(":hidden") || !navBtn.is(':hidden')) {
             header.slideUp(600);
             nav.addClass("transparentNav");
@@ -39,7 +39,6 @@ $(() => {
         if (scrollPosition !== 0) {
           // Show scroll button if still hidden
           if (scrollUpBtn.hasClass("scroll-up-hide")) {
-            console.log("Check misfires")
             scrollUpBtn.removeClass();
             scrollUpBtn.addClass("scroll-up-show");
             scrollUpBtn.css('animation-name', 'pulse');
@@ -67,14 +66,13 @@ $(() => {
     
     const textArea = $('#tweet-text');
     const form = $('.new-tweet');
-    const header = $('body').children('header');
 
-
-    let currentPosition = $(window).scrollTop();
-    let timer = 0;
+    const currentPosition = $(window).scrollTop();
     let i = currentPosition;
     let j = i;
-    while (i >= 0){
+    let timer = 0;
+    // Scroll to top animation logic
+    while (i >= 0) {
       if (i < 3) {
         i = 0;
       }
@@ -84,21 +82,15 @@ $(() => {
         }
         window.scrollTo(0, j);
         j -= 3;
-      }, timer)
+      }, timer);
       timer++;
       i -= 3;
     }
     setTimeout(() => {
       form.slideDown("slow", () => {
         textArea.focus();
-        console.log($('#scrollUpBtn'))
-        $('#scrollUpBtn').css('animation-name', 'none');
       });
-      setTimeout(() => {
-        
-      }, 400);      
     }, timer + 20);
-
   });
 
 });

@@ -39,6 +39,7 @@ main {
     flex-direction: row;
     gap: 40px;
     padding-top: 175px;
+    padding-bottom: 80px;
   }
   
   main {
