@@ -19,6 +19,8 @@ body {
   background-color: #f1ae3a;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 /*
@@ -31,6 +33,19 @@ main {
   background-color: inherit;
 }
 
-body > footer {
-  text-align: center;
+@media screen and (min-width: 1024px) {
+  
+  body {
+    flex-direction: row;
+    gap: 40px;
+    padding-top: 175px;
+  }
+  
+  main {
+    width: 60%;
+    margin: 0 auto;
+    background-color: inherit;
+    margin-right: 40px;
+  }
+
 }

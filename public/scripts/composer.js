@@ -7,31 +7,57 @@ $(() => {
     const navBtn = nav.children('button');
     const header = $('body').children('header');
     const tweetContainer = $('#tweets-container');
-
-    // Only hide navHeader when there's enough tweet content to fill the screen
-    if (tweetContainer.height() > $(window).height()) {
-      if (scrollPosition !== 0) {
-        // Show scroll button if still hidden
-        if (scrollUpBtn.hasClass("scroll-up-hide")) {
+    // do functionality on screens smaller than 768px
+    if (window.matchMedia('(max-width: 1024px)').matches) {
+      // Only hide navHeader when there's enough tweet content to fill the screen
+      if (tweetContainer.height() > $(window).height()) {
+        if (scrollPosition !== 0) {
+          // Show scroll button if still hidden
+          if (scrollUpBtn.hasClass("scroll-up-hide")) {
+            scrollUpBtn.removeClass();
+            scrollUpBtn.addClass("scroll-up-show");
+          }
+          // Hide the nav, somehow make tweeter heading stay
+          if (!header.is(":hidden") || !navBtn.is(':hidden')) {
+            header.slideUp(600);
+            nav.addClass("transparentNav");
+            navBtn.addClass('scroll-up-hide');
+          }
+          
+        } else {
           scrollUpBtn.removeClass();
-          scrollUpBtn.addClass("scroll-up-show");
+          scrollUpBtn.addClass("scroll-up-hide");
+          header.slideDown(600);
+          nav.removeClass();
+          navBtn.removeClass();
         }
-        // Hide the nav, somehow make tweeter heading stay
-        if (!header.is(":hidden") || !navBtn.is(':hidden')) {
-          //nav.hide("slide");
-          header.slideUp(600);
-          nav.addClass("transparentNav");
-          navBtn.addClass('scroll-up-hide');
+      }
+    } else {
+      // Only hide navHeader when there's enough tweet content to fill the screen
+      if (tweetContainer.height() > $(window).height()) {
+        if (scrollPosition !== 0) {
+          // Show scroll button if still hidden
+          if (scrollUpBtn.hasClass("scroll-up-hide")) {
+            console.log("Check misfires")
+            scrollUpBtn.removeClass();
+            scrollUpBtn.addClass("scroll-up-show");
+          }
+          // Hide the nav
+          if (!header.is(":hidden") || !navBtn.is(':hidden')) {
+            nav.addClass("transparentNav");
+            navBtn.addClass('scroll-up-hide');
+          }
+          
+        } else {
+          scrollUpBtn.removeClass();
+          scrollUpBtn.addClass("scroll-up-hide");
+          nav.removeClass();
+          navBtn.removeClass();
         }
-        
-      } else {
-        scrollUpBtn.removeClass();
-        scrollUpBtn.addClass("scroll-up-hide");
-        header.slideDown(600);
-        nav.removeClass();
-        navBtn.removeClass();
       }
     }
+    
+    
     
   });
 
@@ -54,8 +80,12 @@ $(() => {
     }
     setTimeout(() => {
       form.slideDown("slow");
-      textArea.focus();
-    }, timer);
+      setTimeout(() => {
+        textArea.focus();
+        $(this).removeClass();
+      }, 400);      
+    }, timer + 20);
+
   });
 
 });

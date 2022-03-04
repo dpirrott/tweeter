@@ -3,7 +3,7 @@ $(() => {
   const swayingPointer = formToggle.find('.fa-angles-down')
   const form = $('.new-tweet')
 
-  formToggle.on('click', (e) => {
+  formToggle.on('click', () => {
     if (form.is(':hidden')) {
       form.slideDown("slow");
     } else {

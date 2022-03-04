@@ -81,3 +81,15 @@ label[for=tweet-text] {
   color: black;
   background-color: yellow;
 }
+
+@media screen and (min-width: 1024px) {
+
+  #tweet-form {
+    margin-bottom: 10px;
+  }
+
+  .new-tweet > h2 {
+    margin-top: 0;
+  }
+
+}
