@@ -4,11 +4,12 @@ Tweeter is a simple, single-page Twitter clone built with HTML, CSS, JS, jQuery 
 
 ## Demo
 
+
 | !["Posting a tweet demo"](https://github.com/dpirrott/tweeter/blob/master/docs/enterTweet.gif) |
 
-| --------------- |
+| :--: |
 
-| Posting a tweet |
+| *Posting a tweet* |
 
 ## Getting Started
 
